@@ -64,6 +64,7 @@ BEGIN_MESSAGE_MAP(CToolPathGeneratorDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDCANCEL, &CToolPathGeneratorDlg::OnBnClickedCancel)
 END_MESSAGE_MAP()
 
 
@@ -152,3 +153,10 @@ HCURSOR CToolPathGeneratorDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+
+void CToolPathGeneratorDlg::OnBnClickedCancel()
+{
+	// TODO: Add your control notification handler code here
+	CDialogEx::OnCancel();
+}

@@ -65,6 +65,8 @@ BEGIN_MESSAGE_MAP(CToolPathGeneratorDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDCANCEL, &CToolPathGeneratorDlg::OnBnClickedCancel)
+	ON_BN_CLICKED(IDC_BUTTON3, &CToolPathGeneratorDlg::OnImportWorkpiece)
+	ON_BN_CLICKED(IDC_BUTTON1, &CToolPathGeneratorDlg::OnImportPart)
 END_MESSAGE_MAP()
 
 
@@ -154,9 +156,37 @@ HCURSOR CToolPathGeneratorDlg::OnQueryDragIcon()
 }
 
 
-
 void CToolPathGeneratorDlg::OnBnClickedCancel()
 {
 	// TODO: Add your control notification handler code here
 	CDialogEx::OnCancel();
+}
+
+
+void CToolPathGeneratorDlg::OnImportWorkpiece()
+{
+	// TODO: Add your control notification handler code here
+	CFileDialog dlg(TRUE);
+	dlg.m_ofn.lpstrFilter = "STL Files (*.stl)";
+	dlg.m_ofn.lpstrTitle = "Open STL File";
+
+	if (dlg.DoModal() == IDOK)
+	{
+		CString strStlFileName = dlg.GetPathName(); // return
+	}
+}
+
+
+
+void CToolPathGeneratorDlg::OnImportPart()
+{
+	// TODO: Add your control notification handler code here
+	CFileDialog dlg(TRUE);
+	dlg.m_ofn.lpstrFilter = "STL Files (*.stl)";
+	dlg.m_ofn.lpstrTitle = "Open STL File";
+
+	if (dlg.DoModal() == IDOK)
+	{
+		CString strStlFileName = dlg.GetPathName(); // return
+	}
 }
